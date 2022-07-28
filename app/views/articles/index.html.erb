@@ -1,0 +1,8 @@
+<ul class="list-unstyled">
+  <% @articles.each do |article| %>
+  <%# code w/o action text: <% match_data = article.content.to_plain_text.match(/([^.]+)\.([^.]+)\./) %>
+    <% match_data = article.content.to_plain_text.match(/([^.]+)\.([^.]+)\./) %>
+    <li class="article-title"><%= link_to article.title, article_path(article) %></li>
+    <li class="article-summ"><%= "#{match_data[1]}. #{match_data[2]}." %></li>
+  <% end %>
+</ul>
