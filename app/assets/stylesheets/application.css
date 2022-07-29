@@ -102,3 +102,5 @@ input[type=submit] {
   width: auto;
   margin-top: 1rem;
 }
+
+.trix-button-group--file-tools { display: none !important; }

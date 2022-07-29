@@ -3,6 +3,10 @@
   <%# code w/o action text: <% match_data = article.content.to_plain_text.match(/([^.]+)\.([^.]+)\./) %>
     <% match_data = article.content.to_plain_text.match(/([^.]+)\.([^.]+)\./) %>
     <li class="article-title"><%= link_to article.title, article_path(article) %></li>
-    <li class="article-summ"><%= "#{match_data[1]}. #{match_data[2]}." %></li>
+    <% if match_data.nil? %>
+      <li class="article-summ"><%= "#{article.content.to_plain_text}" %></li>
+    <% else %>
+      <li class="article-summ"><%= "#{match_data[1]}. #{match_data[2]}." %></li>
+    <% end %>
   <% end %>
 </ul>
