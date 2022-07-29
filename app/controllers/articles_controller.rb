@@ -3,10 +3,11 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    raise
+    # raise
   end
 
   def show
+    # raise
   end
 
   def new
